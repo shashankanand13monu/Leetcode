@@ -9,11 +9,26 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
+
+void flat(TreeNode*root , TreeNode* &prev)
+{
+    if(!root)
+            return ;
+        
+        flat(root->right,prev);
+        flat(root->left,prev);
+        root->right=prev;
+        root->left=NULL;
+        prev=root;
+}
 class Solution {
 public:
     void flatten(TreeNode* root) 
     {
-        TreeNode* curr= root;
+        TreeNode* prev= NULL;
+        flat(root,prev);
+        
+        /*TreeNode* curr= root;
         TreeNode* prev;
         
         while(curr)
@@ -34,6 +49,7 @@ public:
             curr=curr->right;
             
         }
+        */
         
     }
 };
