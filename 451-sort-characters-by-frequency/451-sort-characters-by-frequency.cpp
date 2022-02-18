@@ -1,8 +1,30 @@
 class Solution {
 public:
     string frequencySort(string s) {
-       
+      
+        priority_queue<pair<int,char>>q;
         unordered_map<char,int>map;
+        
+        for( auto i: s)
+            map[i]++;
+        
+        for(auto i: map)
+            q.push(make_pair(i.second,i.first)); // [5,t]
+        
+        string ans="";
+        
+        while(!q.empty())
+        {
+            int x= q.top().first;
+            char c= q.top().second;
+            
+            ans.append(x,c);
+            
+            q.pop();
+        }
+        return ans;
+        
+       /* unordered_map<char,int>map;
         
         for( auto i: s)
             map[i]++;
@@ -15,7 +37,7 @@ public:
             char c= i.first;
             int n= i.second;
             
-            arr[n].append(n,c);
+            arr[n].append(n,c); //No. of chracter to append
             
     
         }
@@ -29,5 +51,6 @@ public:
         
         
         return ans;
+        */
     }
 };
