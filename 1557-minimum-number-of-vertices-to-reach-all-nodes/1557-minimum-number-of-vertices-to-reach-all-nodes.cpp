@@ -13,14 +13,15 @@ public:
         
         for(auto i: edges)
         {
-            if(map[i[0]]==0)
+            if(!map[i[0]])
             {
                 ans.push_back(i[0]);
-                map[i[0]]--;
+                map[i[0]]++;
             }
                 
         }
-        
+   
+           
         return ans;
     }
 };
