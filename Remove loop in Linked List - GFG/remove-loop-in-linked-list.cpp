@@ -103,17 +103,25 @@ class Solution
          
          Node *temp=LoopStart;
          Node* p=head;
+         
+        
         while(temp!=p){
             temp=temp->next;
             p=p->next;
         }
         
-        Node*x=p;
-        while(x->next!=p)
-        {
-            x=x->next;
+        
+        //  temp=temp->next;
+          while(p->next!=temp){
+            p=p->next;
         }
-        x->next=NULL;
+        p->next=NULL;
+        // Node*x=p;
+        // while(x->next!=p)
+        // {
+        //     x=x->next;
+        // }
+        // x->next=NULL;
         // temp->next=NULL;
     }
 };
