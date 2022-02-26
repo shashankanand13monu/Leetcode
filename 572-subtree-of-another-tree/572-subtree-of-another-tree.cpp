@@ -9,42 +9,33 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-bool areIdentical(TreeNode * root1, TreeNode *root2)
+
+bool twin(TreeNode* T, TreeNode* S)
 {
-    /* base cases */
-    if (root1 == NULL && root2 == NULL)
+    if(T==NULL and S==NULL)
         return true;
- 
-    if (root1 == NULL || root2 == NULL)
+    
+    if(T==NULL or S==NULL)
         return false;
- 
-    /* Check if the data of both roots is same and data of left and right
-       subtrees are also same */
-    return (root1->val == root2->val   &&
-            areIdentical(root1->left, root2->left) &&
-            areIdentical(root1->right, root2->right) );
+    
+    return (T->val==S->val and twin(T->left,S->left) and twin(T->right,S->right));
 }
 
-bool subtree(TreeNode * T, TreeNode *S)
-{
-    if(T==NULL)
-        return false;
-    if(S==NULL)
-        return true;
-    
-    
-    if(areIdentical(T,S))
-        return true;
-    
-    return subtree(T->left,S) || subtree(T->right,S);
-}
 class Solution {
 public:
     bool isSubtree(TreeNode* root, TreeNode* subRoot) 
     {
-           // if(subtree(root,subRoot))
-           //     areIdentical(root,subRoot);
-               
-              return subtree(root,subRoot);
+        if(subRoot==NULL)
+            return true;
+        
+        if(root==NULL)
+            return false;
+        
+        if(twin(root,subRoot))
+            return true;
+        
+        return isSubtree(root->left,subRoot) or isSubtree(root->right,subRoot);
+        
+            
     }
 };
