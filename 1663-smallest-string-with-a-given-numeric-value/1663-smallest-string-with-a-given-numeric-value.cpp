@@ -17,8 +17,8 @@ public:
             }
             else
             {
-                a[x]=a[x]+k;
-                k=0;
+                a[x]=a[x]+1;
+                k=k-1;
             }
         }
         
