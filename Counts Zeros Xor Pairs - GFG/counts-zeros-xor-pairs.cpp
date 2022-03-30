@@ -34,12 +34,16 @@ int main()
 long long int calculate(int a[], int n)
 {   
     long long count=0;
-    for(auto i=0 ;i<n-1;i++)
+    for(int i=0 ;i<n-1;i++)
     {
         for(int j=i+1;j<n;j++)
         {
-            if(a[i]==a[j])
-            count++;
+            if((a[i]^a[j])<1)
+            {
+               count++; 
+            //   cout<<a[i]<<",->"<<a[i];
+            }
+            
             
         }
     }
