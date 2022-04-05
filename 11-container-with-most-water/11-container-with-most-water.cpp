@@ -16,13 +16,13 @@ public:
             if(area>max)
                 max=area;
             
-            // if(h[i]<h[j])
-            //     i++;
-            // else
-            //     j--;
+            if(h[i]<h[j])
+                i++;
+            else
+                j--;
                 
-            while (h[i] <= b && i < j) i++;
-        while (h[j] <= b && i < j) j--;
+        //     while (h[i] <= b && i < j) i++;
+        // while (h[j] <= b && i < j) j--;
         }
         
         return max;
