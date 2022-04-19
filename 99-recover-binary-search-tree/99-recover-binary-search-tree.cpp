@@ -10,32 +10,37 @@
  * };
  */
 
+void traverse(TreeNode* &root,TreeNode* &f,TreeNode* &s,TreeNode* &p)
+{
+    if(!root)
+        return;
+    
+    //Morris Traversal important
+    
+    traverse(root->left,f,s,p);
+    
+    if(f==NULL and (p==NULL or p->val>=root->val))
+        f=p;
+    if(f!=NULL and p->val>=root->val)
+        s=root;
+    
+    p=root;
+    
+    
+    traverse(root->right,f,s,p);
+
+    
+}
+
 class Solution {
-    // MOrris Traversal important
-private:
-    
-    void markTree(TreeNode* root, TreeNode*& prev, TreeNode*& first, TreeNode*& end) {
-        if (!root) return;
-        markTree(root->left, prev, first, end);
-        if (prev) {
-            if (root->val < prev->val) {
-                if (!first) {
-                    first = prev;
-                }
-                end = root;
-            }
-        }
-        prev = root;
-        markTree(root->right, prev, first, end);
-    }
-    
-    
 public:
     void recoverTree(TreeNode* root) {
-        TreeNode *prev = nullptr, *first = nullptr, *end = nullptr;
-        markTree(root, prev, first, end);
-        swap(first->val, end->val);
-        return;
+        
+        TreeNode* f= nullptr;
+        TreeNode* s= NULL;
+        TreeNode* p= NULL;
+        traverse(root,f,s,p);
+        swap(f->val,s->val);
+        // cout<<f->val;
     }
-
 };
