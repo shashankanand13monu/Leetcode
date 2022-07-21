@@ -36,10 +36,14 @@ int merge(vector<int>& nums,int l,int mid,int r)
        temp.push_back(nums[right++]);
 
     }
-    
+    int k=0;
     for(int i=l;i<=r;i++)
     {
-        nums[i]=temp[i-l];
+        // nums[i]=temp[i-l];
+            nums[i]=temp[k];
+        k++;
+
+        
     }
     return cnt;
 }
