@@ -53,7 +53,8 @@ int mergesort(vector<int>& nums,int l,int r)
     if(l>=r)
         return 0;
     int mid= (l+r)/2;
-    int inv= mergesort(nums,l,mid);
+    int inv=0;
+     inv= mergesort(nums,l,mid);
     inv+= mergesort(nums,mid+1,r);
     inv+= merge(nums,l,mid,r);
     return inv;
