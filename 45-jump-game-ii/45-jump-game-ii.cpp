@@ -2,30 +2,26 @@ class Solution {
 public:
     int jump(vector<int>& nums) 
     {   
-        if(nums.size()==1)
+        int jump=0;
+        int curr=0;
+        int fur=0;
+          if(nums.size()==1)
+        {
             return 0;
-        int r=0;
-        int mx=0;
-        int temp=0;
-        int ans=0;
-        
+        }
         for(int i=0;i<nums.size()-1;i++)
         {
-            if(nums[i]+i>temp)
-                temp=nums[i]+i;
+            fur=max(fur,i+nums[i]);
             
-            
-            
-            // mx=max(mx,i+nums[i]);
-            
-            if(i==r)
+            if(curr==i)
             {
-                ans++;
-                // max=temp;
-                r=temp;
+                curr=fur;
+                jump++;
             }
+            
+            if(curr>nums.size())
+                break;
         }
-        
-        return ans;
+        return jump;
     }
 };
