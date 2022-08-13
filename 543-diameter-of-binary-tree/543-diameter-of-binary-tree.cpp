@@ -10,15 +10,16 @@
  * };
  */
 
-int h(TreeNode* root,int &d)
-{
+int h(TreeNode* root, int &d)
+{   
     if(!root)
-            return 0;
-    
+        return 0;
     int l= h(root->left,d);
     int r= h(root->right,d);
-    d=max(d,l+r);
-    return 1+max(l,r);
+    
+    d= max(d,l+r);
+    
+    return 1+ max(l,r);
 }
 
 class Solution {
