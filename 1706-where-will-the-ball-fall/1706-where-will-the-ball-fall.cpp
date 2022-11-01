@@ -12,7 +12,7 @@ public:
             
             for(int i=0;i<n;i++)
             {
-                next= curr+ g[i][curr];
+                next= curr+ g[i][curr]; //next row to go
                 
                 if(next<0 or next>=m or g[i][curr]!=g[i][next])
                 {
