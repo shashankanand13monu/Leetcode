@@ -1,6 +1,7 @@
 class Solution {
 public:
     int maxPoints(vector<vector<int>>& points) {
+        //Striver 2 hour hard
         int n= points.size();
         int mx=0;
         for(int i=0;i<n;i++)
@@ -17,6 +18,7 @@ public:
                     dup++;
                 else
                 {
+                    
                     int gc= __gcd(dy,dx);
                     dy=dy/gc;
                     dx=dx/gc;
