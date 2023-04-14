@@ -1,6 +1,8 @@
 # Recursively remove all adjacent duplicates
 ## Medium
-<div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given a string s, remove all its adjacent duplicate characters recursively.&nbsp;</span></p>
+<div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given a string s, remove all its adjacent duplicate characters recursively.&nbsp;<br>
+<br>
+<strong>Note:</strong> For some test cases, the resultant string would be an <strong>empty</strong> string. In that case, the function should return the empty string only.</span></p>
 
 <p><strong><span style="font-size:18px">Example 1:</span></strong></p>
 
@@ -21,8 +23,7 @@ g(ee)ksforg(ee)k -&gt; gksforgk</span></pre>
 
 <p><br>
 <span style="font-size:18px"><strong>Your Task:</strong><br>
-You don't need to read input or print anything. Your task is to complete the function <strong>rremove()</strong> which takes the string S as input parameter and returns the resultant string.<br>
-<strong>Note:</strong> For some test cases, the resultant string would be an <strong>empty</strong> string. For that case, the function should return the empty string only.</span></p>
+You don't need to read input or print anything. Your task is to complete the function <strong>rremove()</strong> which takes the string S as input parameter and returns the resultant string.</span></p>
 
 <p><br>
 <span style="font-size:18px"><strong>Expected Time Complexity:</strong> O(|S|)<br>
